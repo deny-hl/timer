@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#display {
+  font-size: 48px;
+  margin: 0 20px;
+}
+
+.controls, .presets {
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 0 5px 0 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.presets button {
+  background: #ef8a8a;
+  border: 1px solid #ef8a8a;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+}
+button:active {
+  background-color: #ef8a8a;
+}
