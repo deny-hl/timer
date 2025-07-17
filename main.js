@@ -1,6 +1,8 @@
+
 'use strict';
 
-let totalSeconds = 120;
+let presetSeconds = 120;
+let totalSeconds = presetSeconds;
 let intervalId = null;
 const display = document.getElementById('display');
 const btnStart = document.getElementById('start');
@@ -8,12 +10,6 @@ const btnPause = document.getElementById('pause');
 const btnReset = document.getElementById('reset');
 const presets = document.querySelectorAll('.preset');
 
-
-function formatTime(sec) {
-  const m = String(Math.floor(sec / 60)).padStart(2, '0');
-  const s = String(sec % 60).padStart(2, '0');
-  return `${m}:${s}`;
-}
 
 function updateDisplay() {
   display.textContent = formatTime(totalSeconds);
@@ -29,7 +25,7 @@ function tick() {
   }
 }
 
-function resetTimer(initialSec = 120) {
+function resetTimer(initialSec = presetSeconds) {
   clearInterval(intervalId);
   intervalId = null;
   totalSeconds = initialSec;
@@ -38,8 +34,8 @@ function resetTimer(initialSec = 120) {
 
 presets.forEach(btn => {
   btn.addEventListener('click', () => {
-    const secs = parseInt(btn.dataset.seconds, 10);
-    resetTimer(secs);
+    presetSeconds = parseInt(btn.dataset.seconds, 10);
+    resetTimer(presetSeconds);
   });
 });
 
@@ -54,10 +50,7 @@ btnPause.addEventListener('click', () => {
 });
 
 btnReset.addEventListener('click', () => {
-  clearInterval(intervalId);
-  intervalId = null;
-  totalSeconds = 120;
-  updateDisplay();
+  resetTimer();
 });
 
 updateDisplay();
