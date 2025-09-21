@@ -7,18 +7,27 @@
   <title>Timer</title>
 </head>
 <body>
-  <div class="presets">
-    <button class="preset" data-seconds="60">1 min</button>
-    <button class="preset" data-seconds="120">2 min</button>
-    <button class="preset" data-seconds="180">3 min</button>
-    <button class="preset" data-seconds="300">5 min</button>
-  </div>
-  <div id="display">02:00</div>
-  <div id="controls">
-    <button id="start">Start</button>
-    <button id="pause">Pause</button>
-    <button id="reset">Reset</button>
-  </div>
+  <main class="timer-app" role="main">
+    <header class="timer-app__header">
+      <h1 class="timer-app__title">Focus Timer</h1>
+      <p class="timer-app__subtitle">Choose a preset to stay on track or hit start to begin your countdown.</p>
+    </header>
+
+    <section class="presets" aria-label="Timer presets">
+      <button class="preset" data-seconds="60">1 min</button>
+      <button class="preset" data-seconds="120">2 min</button>
+      <button class="preset" data-seconds="180">3 min</button>
+      <button class="preset" data-seconds="300">5 min</button>
+    </section>
+
+    <div id="display" class="timer-app__time" aria-live="polite">02:00</div>
+
+    <section id="controls" class="timer-app__controls" aria-label="Timer controls">
+      <button id="start">Start</button>
+      <button id="pause">Pause</button>
+      <button id="reset">Reset</button>
+    </section>
+  </main>
   <script src="formatTime.js"></script>
   <script src="main.js"></script>
 </body>
