@@ -21,11 +21,14 @@
     </section>
 
     <div id="display" class="timer-app__time" aria-live="polite">02:00</div>
+    <p id="status-message" class="timer-app__status" role="status" aria-live="polite">
+      Timer ready. Select a preset to begin.
+    </p>
 
     <section id="controls" class="timer-app__controls" aria-label="Timer controls">
-      <button id="start">Start</button>
-      <button id="pause">Pause</button>
-      <button id="reset">Reset</button>
+      <button id="start" type="button">Start</button>
+      <button id="pause" type="button">Pause</button>
+      <button id="reset" type="button">Reset</button>
     </section>
   </main>
   <script src="formatTime.js"></script>
